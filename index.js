@@ -1,10 +1,6 @@
 class FileIcons {
   constructor () {
     this.db = require('./lib/icon-tables.js')
-    this.option = {
-      color: true,
-      array: false
-    }
   }
 
   matchAll (name) {
@@ -20,6 +16,10 @@ class FileIcons {
   }
 
   getClass (name, options) {
+    this.option = {
+      color: true,
+      array: false
+    }
     for (const i in options) {
       this.option[i] = options[i]
     }
