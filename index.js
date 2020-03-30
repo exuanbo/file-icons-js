@@ -26,8 +26,11 @@ class FileIcons {
     const colorMode = option.color ? 0 : null
     const asArray = option.array
     const icon = this.matchAll(name)
+    const fallback = asArray
+      ? ['icon', 'default-icon']
+      : 'icon default-icon'
 
-    return icon ? icon.getClass(colorMode, asArray) : null
+    return icon ? icon.getClass(colorMode, asArray) : fallback
   }
 }
 
