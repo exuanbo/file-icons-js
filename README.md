@@ -2,7 +2,9 @@
 
 > File-specific icons extracted from [file-icons/atom](https://github.com/file-icons/atom)
 
-[![NPM Version][npm-image]][npm-url] [![jsDelivr][jsDelivr-image]][jsDelivr-url]
+[![Travis (.com)](https://img.shields.io/travis/com/exuanbo/file-icons-js?style=flat-square)](https://travis-ci.com/github/exuanbo/file-icons-js)
+[![NPM Version](https://img.shields.io/npm/v/@exuanbo/file-icons-js?style=flat-square)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@exuanbo/file-icons-js/badge)](https://www.jsdelivr.com/package/npm/@exuanbo/file-icons-js)
 
 <img alt="Icons preview" src="https://raw.githubusercontent.com/file-icons/atom/master/preview.png">
 
@@ -36,7 +38,7 @@ Used directly in html
 <i class="icons css3-icon medium-blue"></i>
 ```
 
-Full list of classes can be found in
+Full list of available classes can be found in
 
 - [`dist/file-icons.css`](./dist/file-icons.css)
 - [`styles/icons.less`](./styles/icons.less)
@@ -135,8 +137,3 @@ icons.getClass('node_modules', {
 ## License
 
 [MIT](https://github.com/exuanbo/file-icons-js/blob/master/LICENSE)
-
-[npm-image]: https://img.shields.io/npm/v/@exuanbo/file-icons-js?style=flat-square
-[npm-url]: https://www.npmjs.com/package/@exuanbo/file-icons-js
-[jsDelivr-image]: https://data.jsdelivr.com/v1/package/npm/@exuanbo/file-icons-js/badge
-[jsDelivr-url]: https://www.jsdelivr.com/package/npm/@exuanbo/file-icons-js
