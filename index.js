@@ -16,15 +16,15 @@ class FileIcons {
   }
 
   getClass (name, options) {
-    this.option = {
+    const option = {
       color: true,
       array: false
     }
     for (const i in options) {
-      this.option[i] = options[i]
+      option[i] = options[i]
     }
-    const colorMode = this.option.color ? 0 : null
-    const asArray = this.option.array
+    const colorMode = option.color ? 0 : null
+    const asArray = option.array
     const icon = this.matchAll(name)
 
     return icon ? icon.getClass(colorMode, asArray) : null
