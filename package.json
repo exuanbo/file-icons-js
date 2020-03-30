@@ -38,5 +38,9 @@
     "jest": "^25.2.4",
     "vinyl-source-stream": "^2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
 }
