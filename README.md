@@ -2,6 +2,8 @@
 
 > File-specific icons extracted from [file-icons/atom](https://github.com/file-icons/atom)
 
+[![NPM Version][npm-image]][npm-url] [![jsDelivr][jsDelivr-image]][jsDelivr-url]
+
 <img alt="Icons preview" src="https://raw.githubusercontent.com/file-icons/atom/master/preview.png">
 
 ## Installation
@@ -14,28 +16,37 @@ npm install @exuanbo/file-icons-js
 
 ### CSS
 
-add link tag to head,
+![css gzip size](https://img.badgesize.io/exuanbo/file-icons-js/master/dist/file-icons.min.css.svg?compression=gzip&style=flat-square)
+
+Link to head,
 
 ```html
+<!-- Local -->
 <link rel="stylesheet" href="node_modules/@exuanbo/file-icons-js/dist/file-icons.min.css">
+
+<!-- Using CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css">
 ```
 
 or `@import` in css file.
 
-you can use this stylesheet directly without javascript
+Used directly in html
 
 ```html
 <i class="icons css3-icon medium-blue"></i>
 ```
 
-classes can be found in
+Full list of classes can be found in
 
+- [`dist/file-icons.css`](./dist/file-icons.css)
 - [`styles/icons.less`](./styles/icons.less)
 - [`styles/colors.less`](./styles/colors.less)
 
 ### Javascript
 
-in node.js
+![js gzip size](https://img.badgesize.io/exuanbo/file-icons-js/master/dist/file-icons.min.js.svg?compression=gzip&style=flat-square)
+
+Require in node.js
 
 ```javascript
 const icons = require('@exuanbo/file-icons-js')
@@ -44,7 +55,14 @@ const icons = require('@exuanbo/file-icons-js')
 or in browser
 
 ```html
+<!-- Local -->
 <script src="node_modules/@exuanbo/file-icons-js/dist/file-icons.min.js"></script>
+
+<!-- Using CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
+```
+
+```html
 <script>
   const icons = require('file-icons-js');
 </script>
@@ -79,16 +97,23 @@ icons.getClass('node_modules', {
 ```
 
 ```html
-<i id="css"></i>
-<script src="node_modules/@exuanbo/file-icons-js/dist/file-icons.min.js"></script>
-<script>
-  const icons = require('file-icons-js')
-  const cssIcon = document.getElementById('css');
-  const classArray = icons.getClass('css', { array: true })
-  for (const i in classArray) {
-    cssIcon.classList.add(classArray[i])
-  }
-</script>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css">
+</head>
+
+<body>
+  <i id="css"></i>
+
+  <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
+  <script>
+    const icons = require('file-icons-js')
+    const cssIcon = document.getElementById('css');
+    const classArray = icons.getClass('css', { array: true })
+    for (const i in classArray) {
+      cssIcon.classList.add(classArray[i])
+    }
+  </script>
+</body>
 ```
 
 ## Icon reference
@@ -98,11 +123,20 @@ icons.getClass('node_modules', {
 - [Mfizz](https://github.com/file-icons/MFixx/blob/master/charmap.md)
 - [Devicons](https://github.com/file-icons/DevOpicons/blob/master/charmap.md)
 
+## Acknowledgement
+
+- [file-icons/atom](https://github.com/file-icons/atom)
+
 ## TODO
 
-- [ ] CDN support
+- [x] CDN support
 - [ ] demo site
 
 ## License
 
 [MIT](https://github.com/exuanbo/file-icons-js/blob/master/LICENSE)
+
+[npm-image]: https://img.shields.io/npm/v/@exuanbo/file-icons-js?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@exuanbo/file-icons-js
+[jsDelivr-image]: https://data.jsdelivr.com/v1/package/npm/@exuanbo/file-icons-js/badge
+[jsDelivr-url]: https://www.jsdelivr.com/package/npm/@exuanbo/file-icons-js

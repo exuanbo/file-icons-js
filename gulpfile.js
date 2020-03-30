@@ -1,4 +1,4 @@
-const gulp = require('gulp')
+const { src, dest, parallel } = require('gulp')
 const browserify = require('browserify')
 const source = require('vinyl-source-stream')
 const streamify = require('gulp-streamify')
@@ -15,17 +15,19 @@ function js () {
   return b.bundle()
     .pipe(source('file-icons.min.js'))
     .pipe(streamify(uglify()))
-    .pipe(gulp.dest('dist'))
+    .pipe(dest('dist'))
 }
 
 function css () {
-  return gulp.src(['./styles/icons.less'])
+  return src(['./styles/icons.less'])
     .pipe(less({
       paths: [path.join(__dirname, 'styles')]
     }))
+    .pipe(rename('file-icons.css'))
+    .pipe(dest('dist'))
     .pipe(cleanCSS())
-    .pipe(rename('file-icons.min.css'))
-    .pipe(gulp.dest('dist'))
+    .pipe(rename({ extname: '.min.css' }))
+    .pipe(dest('dist'))
 }
 
-exports.default = gulp.parallel(js, css)
+exports.default = parallel(js, css)
