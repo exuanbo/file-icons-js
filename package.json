@@ -1,6 +1,6 @@
 {
   "name": "@exuanbo/file-icons-js",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "File-specific icons for extracted from Atom File-icons, https://github.com/file-icons/atom",
   "main": "index.js",
   "scripts": {
