@@ -6,6 +6,7 @@
     <title>file-icons-js</title>
     <style>
       body {
+        max-width: 100%;
         font-size: 16px;
       }
 
@@ -20,14 +21,20 @@
       }
 
       h1 {
-        font-size: 5rem;
+        margin: 4rem auto 0;
+        font-size: 4.5rem;
       }
 
       p {
-        margin-bottom: 4rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.5;
       }
 
       input {
+        width: 7.5rem;
+        padding: 0.375rem;
+        border: 1px solid gray;
+        border-radius: 0.175rem;
         font-size: 1rem;
       }
 
@@ -37,8 +44,16 @@
       }
 
       pre {
-        padding: 1rem;
-        font-size: 1.25rem;
+        width: fit-content;
+        margin: 2rem auto;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.125rem;
+        background-color: #eee;
+      }
+
+      code {
+        padding: 1.5px 2px;
+        font-size: 0.9rem;
         background-color: #eee;
       }
 
@@ -82,7 +97,7 @@
       <p>
         <input placeholder="Enter a file name" value="package.json" autofocus />
       </p>
-      <p>
+      <div>
         <a href="https://travis-ci.com/github/exuanbo/file-icons-js"
           ><img
             alt="Travis (.com)"
@@ -98,11 +113,11 @@
             alt="jsDelivr"
             src="https://data.jsdelivr.com/v1/package/npm/@exuanbo/file-icons-js/badge"
         /></a>
-      </p>
+      </div>
       <pre>npm i @exuanbo/file-icons-js</pre>
     </div>
     <a
-      href="https://your-url"
+      href="https://github.com/exuanbo/file-icons-js"
       class="github-corner"
       aria-label="View source on GitHub"
     >
