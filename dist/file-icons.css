@@ -22,6 +22,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Octicons Regular";
+  src: url("../fonts/octicons.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 /*============================================================================*
 	PALETTE
 	Base16 colours from https://github.com/chriskempson/base16
