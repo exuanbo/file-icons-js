@@ -4,6 +4,7 @@
   "description": "File-specific icons extracted from Atom File-icons, https://github.com/file-icons/atom",
   "main": "lib/main.js",
   "scripts": {
+    "format": "eslint \"**/*.js\" --fix",
     "format:check": "eslint \"**/*.js\"",
     "test": "npm run format:check && jest"
   },
@@ -32,9 +33,12 @@
     "browserify": "^16.5.1",
     "del": "^5.1.0",
     "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-prettier-standard": "^3.0.1",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "gulp": "^4.0.2",
@@ -44,6 +48,8 @@
     "gulp-streamify": "^1.0.2",
     "gulp-uglify-es": "^2.0.0",
     "jest": "^25.2.4",
+    "prettier": "2.0.2",
+    "prettier-config-standard": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {},

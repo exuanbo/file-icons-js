@@ -5,7 +5,7 @@
         "node": true
     },
     "extends": [
-        "standard"
+      "prettier-standard/prettier-file"
     ],
     "globals": {
         "Atomics": "readonly",
