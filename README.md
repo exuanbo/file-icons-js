@@ -22,7 +22,7 @@ npm i @exuanbo/file-icons-js
 
 ### CSS
 
-![css gzip size](https://img.badgesize.io/exuanbo/file-icons-js/master/dist/file-icons.min.css.svg?compression=gzip&style=flat-square)
+![css gzip size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css.svg?compression=gzip&style=flat-square)
 
 Link to head,
 
@@ -49,7 +49,7 @@ Full list of available classes can be found in
 
 ### Javascript
 
-![js gzip size](https://img.badgesize.io/exuanbo/file-icons-js/master/dist/file-icons.min.js.svg?compression=gzip&style=flat-square)
+![js gzip size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js.svg?compression=gzip&style=flat-square)
 
 Require in node.js
 
