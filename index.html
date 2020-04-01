@@ -125,7 +125,14 @@
         width="80"
         height="80"
         viewBox="0 0 250 250"
-        style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+        style="
+          fill: #151513;
+          color: #fff;
+          position: absolute;
+          top: 0;
+          border: 0;
+          right: 0;
+        "
         aria-hidden="true"
       >
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -145,16 +152,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
     <script>
-      const icons = require("file-icons-js");
-      const input = document.querySelector("input");
-      document.getElementById("file-icon").classList.value = icons.getClass(
+      const icons = require('file-icons-js')
+      const input = document.querySelector('input')
+      document.getElementById('file-icon').classList.value = icons.getClass(
         input.value
-      );
-      input.addEventListener("input", updateValue);
+      )
+      input.addEventListener('input', updateValue)
       function updateValue(e) {
-        document.getElementById("file-icon").classList.value = icons.getClass(
+        document.getElementById('file-icon').classList.value = icons.getClass(
           e.target.value
-        );
+        )
       }
     </script>
   </body>

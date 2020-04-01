@@ -1,3 +1,4 @@
-.vscode
-coverage
+.vscode/
+coverage/
+dist/
 package-lock.json
