@@ -44,7 +44,6 @@ Used directly in html
 
 Full list of available classes can be found in
 
-- [`dist/file-icons.css`](./dist/file-icons.css)
 - [`styles/icons.less`](./styles/icons.less)
 - [`styles/colors.less`](./styles/colors.less)
 
@@ -70,7 +69,7 @@ or in browser
 
 ```html
 <script>
-  const icons = require('file-icons-js');
+  const icons = require('file-icons-js')
 </script>
 ```
 
@@ -89,17 +88,17 @@ by default `{ color: true, array: false }`
 ### Example
 
 ```javascript
-icons.getClass('index.js') // icon js-icon medium-yellow
-icons.getClass('Javascript') // icon js-icon medium-yellow
+icons.getClass('index.js') // 'icon js-icon medium-yellow'
+icons.getClass('Javascript') // 'icon js-icon medium-yellow'
 
 icons.getClass('node_modules', {
   array: true
-}) // [ 'icon', 'node-icon', 'medium-green' ]
+}) // ['icon', 'node-icon', 'medium-green']
 
 icons.getClass('node_modules', {
   color: false,
   array: true
-}) // [ 'icon', 'node-icon' ]
+}) // ['icon', 'node-icon']
 ```
 
 ```html
@@ -113,7 +112,7 @@ icons.getClass('node_modules', {
   <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
   <script>
     const icons = require('file-icons-js')
-    const cssIcon = document.getElementById('file-icon');
+    const cssIcon = document.getElementById('file-icon')
     const classArray = icons.getClass('css', { array: true })
     for (const i in classArray) {
       cssIcon.classList.add(classArray[i])
