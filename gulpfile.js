@@ -12,21 +12,25 @@ const rename = require('gulp-rename')
 function clean() {
   return del(['dist'])
 }
-function js () {
+
+function js() {
   const b = browserify()
   b.require('./lib/main.js', { expose: 'file-icons-js' })
 
-  return b.bundle()
+  return b
+    .bundle()
     .pipe(source('file-icons.min.js'))
     .pipe(streamify(uglify()))
     .pipe(dest('dist'))
 }
 
-function css () {
+function css() {
   return src(['./styles/icons.less'])
-    .pipe(less({
-      paths: [path.join(__dirname, 'styles')]
-    }))
+    .pipe(
+      less({
+        paths: [path.join(__dirname, 'styles')]
+      })
+    )
     .pipe(rename('file-icons.css'))
     .pipe(dest('dist'))
     .pipe(cleanCSS())
