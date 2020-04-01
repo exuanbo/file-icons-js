@@ -1,4 +1,5 @@
-const { src, dest, parallel } = require('gulp')
+const { src, dest, series, parallel } = require('gulp')
+const del = require('del')
 const browserify = require('browserify')
 const source = require('vinyl-source-stream')
 const streamify = require('gulp-streamify')
@@ -8,6 +9,9 @@ const less = require('gulp-less')
 const cleanCSS = require('gulp-clean-css')
 const rename = require('gulp-rename')
 
+function clean() {
+  return del(['dist'])
+}
 function js () {
   const b = browserify()
   b.require('./lib/main.js', { expose: 'file-icons-js' })
@@ -30,4 +34,4 @@ function css () {
     .pipe(dest('dist'))
 }
 
-exports.default = parallel(js, css)
+exports.default = series(clean, parallel(js, css))
