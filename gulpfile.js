@@ -10,7 +10,7 @@ const rename = require('gulp-rename')
 
 function js () {
   const b = browserify()
-  b.require('./index.js', { expose: 'file-icons-js' })
+  b.require('./lib/main.js', { expose: 'file-icons-js' })
 
   return b.bundle()
     .pipe(source('file-icons.min.js'))
