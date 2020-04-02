@@ -67,25 +67,26 @@ describe('matchLanguage "typescript"', () => {
   })
 })
 
-describe('matchScope "source.js"', () => {
+describe('matchScope "item.gdscript"', () => {
   test('get class string', () => {
-    expect(icons.getClass('source.js')).toBe('icon js-icon medium-yellow')
+    expect(icons.getClass('item.gdscript')).toBe('icon godot-icon medium-blue')
   })
   test('get class string without color', () => {
-    expect(icons.getClass('source.js', { color: false })).toBe('icon js-icon')
+    expect(icons.getClass('item.gdscript', { color: false })).toBe(
+      'icon godot-icon'
+    )
   })
   test('get class array', () => {
-    expect(icons.getClass('source.js', { array: true })).toEqual([
+    expect(icons.getClass('item.gdscript', { array: true })).toEqual([
       'icon',
-      'js-icon',
-      'medium-yellow'
+      'godot-icon',
+      'medium-blue'
     ])
   })
   test('get class array without color', () => {
-    expect(icons.getClass('source.js', { color: false, array: true })).toEqual([
-      'icon',
-      'js-icon'
-    ])
+    expect(
+      icons.getClass('item.gdscript', { color: false, array: true })
+    ).toEqual(['icon', 'godot-icon'])
   })
 })
 
@@ -111,24 +112,24 @@ describe('matchInterprater "zsh"', () => {
   })
 })
 
-describe('matchSignature "\x1F\x8B"', () => {
+describe('matchNothing "hello.world"', () => {
   test('get class string', () => {
-    expect(icons.getClass('\x1F\x8B')).toBe('icon zip-icon dark-blue')
+    expect(icons.getClass('hello.world')).toBe('icon default-icon')
   })
   test('get class string without color', () => {
-    expect(icons.getClass('\x1F\x8B', { color: false })).toBe('icon zip-icon')
+    expect(icons.getClass('hello.world', { color: false })).toBe(
+      'icon default-icon'
+    )
   })
   test('get class array', () => {
-    expect(icons.getClass('\x1F\x8B', { array: true })).toEqual([
+    expect(icons.getClass('hello.world', { array: true })).toEqual([
       'icon',
-      'zip-icon',
-      'dark-blue'
+      'default-icon'
     ])
   })
   test('get class array without color', () => {
-    expect(icons.getClass('\x1F\x8B', { color: false, array: true })).toEqual([
-      'icon',
-      'zip-icon'
-    ])
+    expect(
+      icons.getClass('hello.world', { color: false, array: true })
+    ).toEqual(['icon', 'default-icon'])
   })
 })
