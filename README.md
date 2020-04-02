@@ -36,15 +36,15 @@ Add a link tag to head, or `@import`
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css">
 ```
 
-`@font-face` has a fallback webfont url, so you can use it directly without hosting required fonts locally.
+`@font-face` has a fallback webfont url, so you can use it directly without hosting required fonts locally. But there would be an annoying error `net::ERR_FILE_NOT_FOUND` in console.
 
 ```css
 @font-face {
   font-family: "file-icons";
   font-weight: normal;
   font-style: normal;
-  src: url("../fonts/file-icons.woff2") format("woff2");
-  src: url("https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/fonts/file-icons.woff2") format("woff2");
+  src: url("../fonts/file-icons.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/fonts/file-icons.woff2") format("woff2");
 }
 ```
 
@@ -167,6 +167,7 @@ icons.getClass('node_modules', {
 
 - [x] CDN support
 - [x] demo site
+- [ ] add a webfont version of css
 
 ## License
 
