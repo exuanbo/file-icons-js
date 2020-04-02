@@ -1,6 +1,6 @@
 {
   "name": "@exuanbo/file-icons-js",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "File-specific icons for front-end project, extracted from file-icons/atom",
   "main": "lib/main.js",
   "scripts": {
