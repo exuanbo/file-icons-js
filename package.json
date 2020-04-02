@@ -1,9 +1,10 @@
 {
   "name": "@exuanbo/file-icons-js",
   "version": "1.1.1",
-  "description": "File-specific icons extracted from Atom File-icons, https://github.com/file-icons/atom",
+  "description": "File-specific icons for front-end project, extracted from file-icons/atom",
   "main": "lib/main.js",
   "scripts": {
+    "build": "gulp",
     "format": "eslint \"**/*.js\" --fix",
     "format:check": "eslint \"**/*.js\"",
     "test": "npm run format:check && jest"
@@ -13,12 +14,18 @@
     "url": "git+https://github.com/exuanbo/file-icons-js.git"
   },
   "keywords": [
-    "icons",
-    "file-icons",
-    "icon-fonts",
-    "octicons",
+    "icon",
+    "font",
+    "icon font",
+    "file icon",
+    "font-awesome",
     "mfizz",
-    "devicons"
+    "devicons",
+    "file-icons",
+    "octicons",
+    "css",
+    "less",
+    "woff2"
   ],
   "author": {
     "name": "exuanbo",

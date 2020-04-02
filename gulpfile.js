@@ -25,7 +25,7 @@ function js() {
 }
 
 function css() {
-  return src(['./styles/icons.less'])
+  return src(['styles/icons.less'])
     .pipe(
       less({
         paths: [path.join(__dirname, 'styles')]
