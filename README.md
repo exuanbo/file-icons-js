@@ -1,6 +1,6 @@
-# File Icons
+# file-icons-js
 
-> File-specific icons extracted from [file-icons/atom](https://github.com/file-icons/atom)
+> File-specific icons for front-end project, extracted from [file-icons/atom](https://github.com/file-icons/atom)
 
 [![Travis (.com)](https://img.shields.io/travis/com/exuanbo/file-icons-js?style=flat-square)](https://travis-ci.com/github/exuanbo/file-icons-js)
 [![NPM Version](https://img.shields.io/npm/v/@exuanbo/file-icons-js?style=flat-square)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
@@ -24,7 +24,7 @@ npm i @exuanbo/file-icons-js
 
 ![css gzip size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css.svg?compression=gzip&style=flat-square)
 
-Link to head,
+Add a link tag to head, or `@import`
 
 ```html
 <!-- Local -->
@@ -34,9 +34,19 @@ Link to head,
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css">
 ```
 
-or `@import` in css file.
+`@font-face` has a fallback webfont url, so you can use it directly without hosting required fonts locally.
 
-Used directly in html
+```css
+@font-face {
+  font-family: "file-icons";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/file-icons.woff2") format("woff2");
+  src: url("https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/fonts/file-icons.woff2") format("woff2");
+}
+```
+
+In html,
 
 ```html
 <i class="icon css3-icon medium-blue"></i>
@@ -51,13 +61,13 @@ Full list of available classes can be found in
 
 ![js gzip size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js.svg?compression=gzip&style=flat-square)
 
-Require in node.js
+Require in node.js,
 
 ```javascript
 const icons = require('@exuanbo/file-icons-js')
 ```
 
-or in browser
+or in browser,
 
 ```html
 <!-- Local -->
@@ -67,38 +77,58 @@ or in browser
 <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
 ```
 
+and then,
+
 ```html
 <script>
   const icons = require('file-icons-js')
 </script>
 ```
 
-### Method
+### API
 
-`getClass(string, options)`
+`getClass(name, options?)`
 
-#### String
+Returns `string | string[]`
 
-accept file name as `'index.js'`, language name as `'Javascript'`, directory name as `'node_modules'`
+#### name
 
-#### Options
+Type: `string`
 
-by default `{ color: true, array: false }`
+Accept file name as `'index.js'`, language name as `'Javascript'`, directory name as `'node_modules'`
+
+#### options
+
+Type: `object`
+
+##### options.color
+
+Type: `boolean`  
+Default: `true`
+
+Returned classes contain color `'icon js-icon medium-yellow'`
+
+##### options.array
+
+Type: `boolean`  
+Default: `false`
+
+Return an array of string `['icon', 'js-icon', 'medium-yellow']`
 
 ### Example
 
 ```javascript
-icons.getClass('index.js') // 'icon js-icon medium-yellow'
-icons.getClass('Javascript') // 'icon js-icon medium-yellow'
+icons.getClass('index.js') //=> 'icon js-icon medium-yellow'
+icons.getClass('Javascript') //=> 'icon js-icon medium-yellow'
 
 icons.getClass('node_modules', {
   array: true
-}) // ['icon', 'node-icon', 'medium-green']
+}) //=> ['icon', 'node-icon', 'medium-green']
 
 icons.getClass('node_modules', {
   color: false,
   array: true
-}) // ['icon', 'node-icon']
+}) //=> ['icon', 'node-icon']
 ```
 
 ```html
@@ -112,10 +142,9 @@ icons.getClass('node_modules', {
   <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
   <script>
     const icons = require('file-icons-js')
-    const cssIcon = document.getElementById('file-icon')
     const classArray = icons.getClass('css', { array: true })
     for (const i in classArray) {
-      cssIcon.classList.add(classArray[i])
+      document.getElementById('file-icon').classList.add(classArray[i])
     }
   </script>
 </body>
