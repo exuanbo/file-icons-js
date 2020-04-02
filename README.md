@@ -2,9 +2,11 @@
 
 > File-specific icons for front-end project, extracted from [file-icons/atom](https://github.com/file-icons/atom)
 
-[![Travis (.com)](https://img.shields.io/travis/com/exuanbo/file-icons-js?style=flat-square)](https://travis-ci.com/github/exuanbo/file-icons-js)
-[![NPM Version](https://img.shields.io/npm/v/@exuanbo/file-icons-js?style=flat-square)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
+[![Travis CI](https://flat.badgen.net/travis/exuanbo/file-icons-js)](https://travis-ci.com/github/exuanbo/file-icons-js)
+[![NPM Version](https://flat.badgen.net/npm/v/@exuanbo/file-icons-js)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
+[![NPM Downloads](https://flat.badgen.net/npm/dw/@exuanbo/file-icons-js)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
 [![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@exuanbo/file-icons-js/badge)](https://www.jsdelivr.com/package/npm/@exuanbo/file-icons-js)
+[![License](https://flat.badgen.net/github/license/exuanbo/file-icons-js)](https://github.com/exuanbo/file-icons-js/blob/master/LICENSE)
 
 <img alt="Icons preview" src="https://raw.githubusercontent.com/file-icons/atom/master/preview.png">
 
@@ -22,7 +24,7 @@ npm i @exuanbo/file-icons-js
 
 ### CSS
 
-![css gzip size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css.svg?compression=gzip&style=flat-square)
+![css gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css)
 
 Add a link tag to head, or `@import`
 
@@ -59,7 +61,7 @@ Full list of available classes can be found in
 
 ### Javascript
 
-![js gzip size](https://img.badgesize.io/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js.svg?compression=gzip&style=flat-square)
+![js gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js)
 
 Require in node.js,
 
