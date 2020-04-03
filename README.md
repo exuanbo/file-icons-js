@@ -8,11 +8,38 @@
 [![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@exuanbo/file-icons-js/badge)](https://www.jsdelivr.com/package/npm/@exuanbo/file-icons-js)
 [![License](https://flat.badgen.net/github/license/exuanbo/file-icons-js)](https://github.com/exuanbo/file-icons-js/blob/master/LICENSE)
 
-<img alt="Icons preview" src="https://raw.githubusercontent.com/file-icons/atom/master/preview.png">
+![Icons preview](https://cdn.jsdelivr.net/gh/file-icons/atom@latest/preview.png)
+
+## Features
+
+- CSS  with self-hosting fonts or web fonts
+- JavaScript for getting html classes by file name with extension, specific directory name and programming language name
+- Small size after gzipped
 
 ## Demo
 
 <https://exuanbo.github.io/file-icons-js/>
+
+### Quick Start
+
+```html
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <i id="icon"></i>
+
+  <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
+  <script>
+    const icons = require('file-icons-js')
+    const classArray = icons.getClass('index.js', { array: true })
+    for (const i in classArray) {
+      document.getElementById('icon').classList.add(classArray[i])
+    }
+  </script>
+</body>
+```
 
 ## Installation
 
@@ -20,38 +47,16 @@
 npm i @exuanbo/file-icons-js
 ```
 
+Or download from [Github Releases](https://github.com/exuanbo/file-icons-js/releases)
+
 ## Usage
 
-### CSS
-
-![css gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css)
-
-Add a link tag to head, or `@import`
+Similar to [`font-awesome`](https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself),
 
 ```html
-<!-- Local -->
-<link rel="stylesheet" href="node_modules/@exuanbo/file-icons-js/dist/file-icons.min.css">
-
-<!-- Using CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css">
-```
-
-`@font-face` has a fallback webfont url, so you can use it directly without hosting required fonts locally. But there would be an annoying error `net::ERR_FILE_NOT_FOUND` in console.
-
-```css
-@font-face {
-  font-family: "file-icons";
-  font-weight: normal;
-  font-style: normal;
-  src: url("../fonts/file-icons.woff2") format("woff2"),
-       url("https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/fonts/file-icons.woff2") format("woff2");
-}
-```
-
-In html,
-
-```html
-<i class="icon css3-icon medium-blue"></i>
+<body>
+  <i class="icon css3-icon medium-blue"></i>
+</body>
 ```
 
 Full list of available classes can be found in
@@ -59,7 +64,59 @@ Full list of available classes can be found in
 - [`styles/icons.less`](./styles/icons.less)
 - [`styles/colors.less`](./styles/colors.less)
 
-### Javascript
+Icon reference
+
+- [File-Icons](https://github.com/file-icons/icons/blob/master/charmap.md)
+- [FontAwesome 4.7.0](https://fontawesome.com/v4.7.0/cheatsheet/)
+- [Mfizz](https://github.com/file-icons/MFixx/blob/master/charmap.md)
+- [Devicons](https://github.com/file-icons/DevOpicons/blob/master/charmap.md)
+
+### CSS
+
+![css gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css)
+
+Add a link tag to head, or `@import`
+
+#### Local
+
+`dist/file-icons.min.css`
+
+```html
+<head>
+  <link href="node_modules/@exuanbo/file-icons-js/dist/file-icons.min.css" rel="stylesheet">
+</head>
+```
+
+#### Using CDN and Web Fonts
+
+`dist/file-icons-cdn.min.css`
+
+```html
+<head>
+  <link href="node_modules/@exuanbo/file-icons-js/dist/file-icons-cdn.min.css" rel="stylesheet">
+</head>
+```
+
+in which `url` is remote,
+
+```css
+@font-face {
+  font-family: "file-icons";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/fonts/file-icons.woff2") format("woff2");
+}
+```
+
+Or entirely using CDN,
+
+```html
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css" rel="stylesheet">
+</head>
+```
+
+### JavaScript
 
 ![js gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js)
 
@@ -69,7 +126,7 @@ Require in node.js,
 const icons = require('@exuanbo/file-icons-js')
 ```
 
-or in browser,
+Or in browser,
 
 ```html
 <!-- Local -->
@@ -97,7 +154,7 @@ Returns `string | string[]`
 
 Type: `string`
 
-Accept file name as `'index.js'`, language name as `'Javascript'`, directory name as `'node_modules'`
+Accept file name with extension as `'index.js'`, specific directory name as `'node_modules'` or `'.github'`, programming language name as `'Javascript'`
 
 #### options
 
@@ -133,32 +190,6 @@ icons.getClass('node_modules', {
 }) //=> ['icon', 'node-icon']
 ```
 
-```html
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css">
-</head>
-
-<body>
-  <i id="file-icon"></i>
-
-  <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
-  <script>
-    const icons = require('file-icons-js')
-    const classArray = icons.getClass('css', { array: true })
-    for (const i in classArray) {
-      document.getElementById('file-icon').classList.add(classArray[i])
-    }
-  </script>
-</body>
-```
-
-## Icon reference
-
-- [File-Icons](https://github.com/file-icons/icons/blob/master/charmap.md)
-- [FontAwesome 4.7.0](https://fontawesome.com/v4.7.0/cheatsheet/)
-- [Mfizz](https://github.com/file-icons/MFixx/blob/master/charmap.md)
-- [Devicons](https://github.com/file-icons/DevOpicons/blob/master/charmap.md)
-
 ## Acknowledgement
 
 - [file-icons/atom](https://github.com/file-icons/atom)
@@ -167,8 +198,13 @@ icons.getClass('node_modules', {
 
 - [x] CDN support
 - [x] demo site
-- [ ] add a webfont version of css
+- [x] add a webfont version of css
+- [ ] ES6 module
 
 ## License
 
 [MIT](https://github.com/exuanbo/file-icons-js/blob/master/LICENSE)
+
+## Donate
+
+<a href="https://www.buymeacoffee.com/exuanbo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-orange.png" alt="Buy Me A Coffee" style="height:36px"></a>
