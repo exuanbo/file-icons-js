@@ -1,0 +1,6 @@
+.vscode/
+coverage/
+dist/
+lib/.icondb.js
+package.json
+package-lock.json

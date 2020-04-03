@@ -5,8 +5,8 @@
   "main": "lib/main.js",
   "scripts": {
     "build": "gulp",
-    "format": "eslint \"**/*.js\" --fix",
-    "format:check": "eslint \"**/*.js\"",
+    "format": "eslint \"**/*.js\" --fix && prettier \"**/*{js,json}\" --write",
+    "format:check": "eslint \"**/*.js\" && prettier --check \"**/*{js,json}\" && markdownlint \"README.md\" && markdown-link-check \"README.md\"",
     "test": "npm run format:check && jest"
   },
   "repository": {
@@ -56,6 +56,8 @@
     "gulp-streamify": "^1.0.2",
     "gulp-uglify-es": "^2.0.0",
     "jest": "^25.2.4",
+    "markdown-link-check": "^3.8.0",
+    "markdownlint-cli": "^0.22.0",
     "prettier": "2.0.2",
     "prettier-config-standard": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
