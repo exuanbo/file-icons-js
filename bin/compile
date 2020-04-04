@@ -1,0 +1,140 @@
+#!/usr/bin/env node
+'use strict'
+
+const fs = require('fs')
+const path = require('path')
+const getOpts = require('get-options')
+const IconCompiler = require('../lib/icons/icon-compiler.js')
+const { options, argv } = getOpts(process.argv.slice(2), {
+  '-h, -?, --help': '',
+  '-v, --version': '',
+  '--verbose': ''
+})
+
+if (options.help) {
+  printHelp()
+  process.exit(0)
+}
+
+if (options.version) {
+  const { version } = require('../package.json')
+  process.stdout.write(`v${version.replace(/^v/i, '')}\n`)
+  process.exit(0)
+}
+
+const unrecognisedOption = argv.find(a => /^-/.test(a))
+if (unrecognisedOption) {
+  process.stderr.write(
+    makeSpiffy('Unknown option: ') + unrecognisedOption + '\n'
+  )
+  printHelp(true)
+  process.exit(1)
+}
+
+// Bail out if needed dependencies are missing
+if (
+  !fs.existsSync(path.resolve(__dirname, '..', 'node_modules', 'coffee-script'))
+) {
+  process.stderr.write(
+    'devDependencies are missing. Run `apm install file-icons`, then try again\n'
+  )
+  process.exit(1)
+}
+
+// No arguments passed or input piped through; recompile package config automatically
+if (!argv[0] && process.stdin.isTTY) {
+  debug('No arguments passed; using sane defaults')
+  new Promise((resolve, reject) => {
+    const inputPath = path.resolve(__dirname, '..', 'config.cson')
+    debug(`Reading input from ${inputPath}`)
+    fs.readFile(inputPath, (error, data) =>
+      error ? reject(error) : resolve(data.toString())
+    )
+  })
+    .then(data => {
+      const outputData = IconCompiler.compileConfigData(data, true)
+      const outputPath = path.resolve(
+        __dirname,
+        '..',
+        'lib',
+        'icons',
+        '.icondb.js'
+      )
+      debug(`Writing output to ${outputPath}`)
+      return new Promise((resolve, reject) => {
+        fs.writeFile(outputPath, outputData, error => {
+          error ? reject(error) : resolve()
+        })
+      })
+    })
+    .catch(error => {
+      console.error(error)
+      process.exit(1)
+    })
+} else
+  new Promise((resolve, reject) => {
+    if (!process.stdin.isTTY) {
+      debug('Reading config from standard input')
+      let input = ''
+      process.stdin.setEncoding('UTF8')
+      process.stdin.on('readable', () => {
+        const chunk = process.stdin.read()
+        chunk !== null ? (input += chunk) : resolve(input)
+      })
+    } else {
+      debug(`Reading config from ${argv[0]}`)
+      fs.readFile(argv[0], (error, data) =>
+        error ? reject(error) : resolve(data.toString())
+      )
+    }
+  })
+    .then(data => {
+      debug('Writing result to standard output')
+      const output = IconCompiler.compileConfigData(data, true)
+      process.stdout.write(output)
+    })
+    .catch(error => {
+      console.error(error)
+      process.exit(1)
+    })
+
+function printHelp(short = false) {
+  if (short) {
+    const usage = 'Usage: compile [--help] input.cson > output.js\n'
+    process.stderr.write(makeSpiffy(usage))
+    return
+  }
+  const help =
+    `
+		Usage: compile [-h|-?|--help] [--verbose] <input>
+
+		Examples:
+			compile
+			compile config.cson
+			compile < config.cson > output.js`
+      .replace(/^\n+/, '')
+      .replace(/\t+/gm, '')
+      .replace(/^(?=compile)/gm, '    ') + '\n'
+  process.stderr.write(makeSpiffy(help))
+}
+
+function makeSpiffy(input) {
+  if (!process.stderr.isTTY) return input
+
+  const bold = '\x1B[1m'
+  const plain = '\x1B[0m'
+  const italic = '\x1B[4m'
+
+  return input
+    .replace(/^([^:]+:\s+)/gm, `${bold}$1${plain}`)
+    .replace(
+      /(\s+|\||\[)(-\?|-{1,2}\w+[-\w]*)(?=[\s|\]]|$)/g,
+      `$1${bold}$2${plain}`
+    )
+    .replace(/<([-\w]+)>/g, `<${italic}$1${plain}>`)
+    .replace(/(\s+)(\S+\.(?:cson|js)\b)/g, `$1${italic}$2${plain}`)
+}
+
+function debug(...args) {
+  options.verbose && process.stderr.write(args.join(' ') + '\n')
+}

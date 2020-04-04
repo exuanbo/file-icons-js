@@ -38,6 +38,7 @@
   "homepage": "https://github.com/exuanbo/file-icons-js#readme",
   "devDependencies": {
     "browserify": "^16.5.1",
+    "coffee-script": "^1.12.7",
     "del": "^5.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
@@ -48,6 +49,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "get-options": "^1.2.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-less": "^4.0.1",
