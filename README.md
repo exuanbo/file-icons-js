@@ -10,11 +10,10 @@
 
 ![Icons preview](https://cdn.jsdelivr.net/gh/file-icons/atom@latest/preview.png)
 
-## Features
+## Description
 
-- CSS  with self-hosting fonts or web fonts
-- JavaScript for getting html classes by file name with extension, specific directory name and programming language name
-- Small size after gzipped
+- CSS  with self-hosting fonts and web fonts
+- JavaScript for getting classes by file name with extension, specific directory name and programming language name
 
 ## Demo
 
@@ -156,6 +155,8 @@ Type: `string`
 
 Accept file name with extension as `'index.js'`, specific directory name as `'node_modules'` or `'.github'`, programming language name as `'Javascript'`
 
+Name ending with `/` will be considered as directory, e.g `'.emacs.d/'`
+
 #### options
 
 Type: `object`
@@ -177,17 +178,22 @@ Return an array of string `['icon', 'js-icon', 'medium-yellow']`
 ### Example
 
 ```javascript
-icons.getClass('index.js') //=> 'icon js-icon medium-yellow'
-icons.getClass('Javascript') //=> 'icon js-icon medium-yellow'
+icons.getClass('index.js')
+// -> 'icon js-icon medium-yellow'
+
+icons.getClass('Javascript')
+// -> 'icon js-icon medium-yellow'
 
 icons.getClass('node_modules', {
   array: true
-}) //=> ['icon', 'node-icon', 'medium-green']
+})
+// -> ['icon', 'node-icon', 'medium-green']
 
 icons.getClass('node_modules', {
   color: false,
   array: true
-}) //=> ['icon', 'node-icon']
+})
+// -> ['icon', 'node-icon']
 ```
 
 ## Acknowledgement
