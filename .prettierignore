@@ -1,6 +1,6 @@
 .vscode/
 coverage/
 dist/
-lib/.icondb.js
+lib/icons/.icondb.js
 package.json
 package-lock.json
