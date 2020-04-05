@@ -53,9 +53,7 @@ Or download from [Github Releases](https://github.com/exuanbo/file-icons-js/rele
 Similar to [`font-awesome`](https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself),
 
 ```html
-<body>
-  <i class="icon css3-icon medium-blue"></i>
-</body>
+<i class="icon css3-icon medium-blue"></i>
 ```
 
 Full list of available classes can be found in
@@ -119,7 +117,7 @@ Or entirely using CDN,
 
 ![js gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js)
 
-Require in node.js,
+Require in Node.js,
 
 ```javascript
 const icons = require('@exuanbo/file-icons-js')
@@ -135,7 +133,7 @@ Or in browser,
 <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
 ```
 
-and then,
+And then create an instance,
 
 ```html
 <script>
@@ -147,11 +145,11 @@ and then,
 
 `getClass(name, options?)`
 
-Returns `string | string[]`
+Returns `String|String[]`
 
 #### name
 
-Type: `string`
+Type: `String`
 
 Accept file name with extension as `'index.js'`, specific directory name as `'node_modules'` or `'.github'`, programming language name as `'Javascript'`
 
@@ -159,7 +157,7 @@ String ended with `/` will be considered as directory, e.g `'.emacs.d/'`
 
 #### options
 
-Type: `object`
+Type: `Object`
 
 ##### options.color
 
