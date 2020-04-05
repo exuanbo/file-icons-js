@@ -155,7 +155,7 @@ Type: `string`
 
 Accept file name with extension as `'index.js'`, specific directory name as `'node_modules'` or `'.github'`, programming language name as `'Javascript'`
 
-Name ending with `/` will be considered as directory, e.g `'.emacs.d/'`
+String ended with `/` will be considered as directory, e.g `'.emacs.d/'`
 
 #### options
 
