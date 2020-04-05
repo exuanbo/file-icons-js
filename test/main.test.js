@@ -23,17 +23,38 @@ describe('matchName file "index.js"', () => {
   })
 })
 
-describe('matchName directory "node_modules"', () => {
+describe('matchName directory ".github"', () => {
   test('get class string', () => {
-    expect(icons.getClass('node_modules')).toBe('icon node-icon medium-green')
+    expect(icons.getClass('.github')).toBe('icon github-icon')
   })
   test('get class string without color', () => {
-    expect(icons.getClass('node_modules', { color: false })).toBe(
+    expect(icons.getClass('.github', { color: false })).toBe('icon github-icon')
+  })
+  test('get class array', () => {
+    expect(icons.getClass('.github', { array: true })).toEqual([
+      'icon',
+      'github-icon'
+    ])
+  })
+  test('get class array without color', () => {
+    expect(icons.getClass('.github', { color: false, array: true })).toEqual([
+      'icon',
+      'github-icon'
+    ])
+  })
+})
+
+describe('matchName directory "node_modules/"', () => {
+  test('get class string', () => {
+    expect(icons.getClass('node_modules/')).toBe('icon node-icon medium-green')
+  })
+  test('get class string without color', () => {
+    expect(icons.getClass('node_modules/', { color: false })).toBe(
       'icon node-icon'
     )
   })
   test('get class array', () => {
-    expect(icons.getClass('node_modules', { array: true })).toEqual([
+    expect(icons.getClass('node_modules/', { array: true })).toEqual([
       'icon',
       'node-icon',
       'medium-green'
@@ -41,7 +62,7 @@ describe('matchName directory "node_modules"', () => {
   })
   test('get class array without color', () => {
     expect(
-      icons.getClass('node_modules', { color: false, array: true })
+      icons.getClass('node_modules/', { color: false, array: true })
     ).toEqual(['icon', 'node-icon'])
   })
 })
