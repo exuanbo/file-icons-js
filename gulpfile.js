@@ -27,20 +27,22 @@ class Option {
 
 function cjs() {
   const options = new Option('cjs')
-  return rollupStream(options).pipe(source('file-icons.js')).pipe(dest('dist'))
+  return rollupStream(options)
+    .pipe(source('file-icons.js'))
+    .pipe(dest('dist/js'))
 }
 
 function es() {
   const options = new Option('es')
   return rollupStream(options)
     .pipe(source('file-icons.es.js'))
-    .pipe(dest('dist'))
+    .pipe(dest('dist/js'))
     .pipe(rename({ extname: '.min.js' }))
     .pipe(buffer())
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('dist'))
+    .pipe(dest('dist/js'))
 }
 
 function browser() {
@@ -54,26 +56,43 @@ function browser() {
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('dist'))
+    .pipe(dest('dist/js'))
 }
 
 function css() {
   return src(['styles/icons.less'])
     .pipe(less({ paths: [path.join(__dirname, 'styles')] }))
     .pipe(rename('file-icons.css'))
-    .pipe(cleanCSS())
+    .pipe(dest('dist/css'))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(dest('dist'))
+    .pipe(sourcemaps.init())
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('dist/css'))
+}
+
+function fonts() {
+  return src(['fonts/*']).pipe(dest('dist/fonts'))
+}
+
+function webfonts() {
+  return src(['dist/css/file-icons.css'])
     .pipe(
       replace(
         /\.\./g,
         'https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest'
       )
     )
-    .pipe(
-      rename({ basename: 'file-icons', suffix: '-cdn', extname: '.min.css' })
-    )
-    .pipe(dest('dist'))
+    .pipe(rename('file-icons-cdn.css'))
+    .pipe(dest('dist/css'))
+    .pipe(rename({ extname: '.min.css' }))
+    .pipe(sourcemaps.init())
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('dist/css'))
 }
 
-exports.default = series(clean, parallel(cjs, es, browser, css))
+exports.default = series(
+  clean,
+  parallel(cjs, es, browser, series(css, fonts, webfonts))
+)

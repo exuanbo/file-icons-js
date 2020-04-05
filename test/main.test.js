@@ -1,5 +1,5 @@
 /* eslint-env jest */
-const icons = require('../dist/file-icons')
+const icons = require('../dist/js/file-icons')
 
 describe('matchName file "index.js"', () => {
   test('get class string', () => {
