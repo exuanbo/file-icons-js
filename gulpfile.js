@@ -35,12 +35,12 @@ function cjs() {
 function es() {
   const options = new Option('es')
   return rollupStream(options)
-    .pipe(source('file-icons.es.js'))
+    .pipe(source('file-icons.mjs'))
     .pipe(dest('dist/js'))
     .pipe(buffer())
     .pipe(sourcemaps.init())
     .pipe(uglify())
-    .pipe(rename({ extname: '.min.js' }))
+    .pipe(rename({ extname: '.es.min.js' }))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/js'))
 }
