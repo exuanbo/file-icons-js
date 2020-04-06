@@ -124,7 +124,6 @@
           /></a>
         </p>
       </div>
-      <pre>npm i @exuanbo/file-icons-js</pre>
     </div>
     <a
       href="https://github.com/exuanbo/file-icons-js"
@@ -160,9 +159,23 @@
       </svg>
     </a>
 
-    <script src="../dist/js/file-icons.min.js"></script>
-    <script>
+    <script nomodule src="../dist/js/file-icons.min.js"></script>
+    <script nomodule>
       const icons = require('file-icons-js')
+      const input = document.querySelector('input')
+      document.getElementById('file-icon').classList.value = icons.getClass(
+        input.value
+      )
+      input.addEventListener('input', updateValue)
+      function updateValue(e) {
+        document.getElementById('file-icon').classList.value = icons.getClass(
+          e.target.value
+        )
+      }
+    </script>
+
+    <script type="module">
+      import icons from '../dist/js/file-icons.es.min.js'
       const input = document.querySelector('input')
       document.getElementById('file-icon').classList.value = icons.getClass(
         input.value
