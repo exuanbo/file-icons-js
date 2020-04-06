@@ -18,9 +18,9 @@ function clean() {
 }
 
 class Option {
-  constructor(fm) {
+  constructor(format) {
     this.input = 'lib/main.js'
-    this.output = { format: fm }
+    this.output = { format: format }
     this.plugins = [commonjs()]
   }
 }
@@ -37,10 +37,10 @@ function es() {
   return rollupStream(options)
     .pipe(source('file-icons.es.js'))
     .pipe(dest('dist/js'))
-    .pipe(rename({ extname: '.min.js' }))
     .pipe(buffer())
     .pipe(sourcemaps.init())
     .pipe(uglify())
+    .pipe(rename({ extname: '.min.js' }))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/js'))
 }
@@ -51,10 +51,11 @@ function browser() {
 
   return b
     .bundle()
-    .pipe(source('file-icons.min.js'))
+    .pipe(source('file-icons.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init())
     .pipe(uglify())
+    .pipe(rename({ extname: '.min.js' }))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/js'))
 }
@@ -64,9 +65,9 @@ function css() {
     .pipe(less({ paths: [path.join(__dirname, 'styles')] }))
     .pipe(rename('file-icons.css'))
     .pipe(dest('dist/css'))
-    .pipe(rename({ extname: '.min.css' }))
     .pipe(sourcemaps.init())
     .pipe(cleanCSS())
+    .pipe(rename({ extname: '.min.css' }))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/css'))
 }
@@ -85,9 +86,9 @@ function webfonts() {
     )
     .pipe(rename('file-icons-cdn.css'))
     .pipe(dest('dist/css'))
-    .pipe(rename({ extname: '.min.css' }))
     .pipe(sourcemaps.init())
     .pipe(cleanCSS())
+    .pipe(rename({ extname: '.min.css' }))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/css'))
 }
