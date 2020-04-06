@@ -10,9 +10,9 @@
   "scripts": {
     "build": "./bin/compile && gulp",
     "format": "eslint \"**/*.js\" --fix && prettier \"**/*.{js,json}\" --write",
-    "format:check": "eslint \"**/*.js\" && prettier --check \"**/*.{js,json}\" && markdownlint \"README.md\" && markdown-link-check \"README.md\"",
-    "pub": "np && rm *.tgz && npm pack",
-    "test": "npm run build && npm run format:check && rm -rf \"coverage\" && jest"
+    "format:check": "eslint \"**/*.js\" && prettier --check \"**/*.{js,json}\" && markdownlint \"./README.md\" && markdown-link-check \"./README.md\"",
+    "pub": "np && rm ./*.tgz && npm pack",
+    "test": "npm run build && npm run format:check && rm -rf \"./coverage\" && jest"
   },
   "repository": {
     "type": "git",
@@ -79,6 +79,6 @@
   },
   "jest": {
     "collectCoverage": true,
-    "coverageDirectory": "coverage"
+    "coverageDirectory": "./coverage"
   }
 }
