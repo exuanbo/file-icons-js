@@ -10,34 +10,70 @@
 
 ![Icons preview](https://cdn.jsdelivr.net/gh/file-icons/atom@latest/preview.png)
 
-## Description
+## Table of Contents
 
-- CSS  with self-hosting fonts and web fonts
-- JavaScript for getting classes by file name with extension, specific directory name and programming language name
+- [Demo](#demo)
+- [Description](#description)
+- [What's included](#whats-included)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [CSS](#css)
+    - [1. Local](#1-local)
+    - [2. Use CDN and Web Fonts](#2-use-cdn-and-web-fonts)
+  - [JavaScript](#javascript)
+    - [Node.js](#nodejs)
+      - [1. CommonJS](#1-commonjs)
+      - [2. ECMAScript Module](#2-ecmascript-module)
+    - [Browser](#browser)
+      - [1. Browserified CommonJS](#1-browserified-commonjs)
+      - [2. ES6 Module](#2-es6-module)
+  - [API Reference](#api-reference)
+    - [name](#name)
+    - [options](#options)
+      - [options.color](#optionscolor)
+      - [options.array](#optionsarray)
+    - [Example](#example)
+- [Acknowledgement](#acknowledgement)
+- [TODO](#todo)
+- [License](#license)
 
 ## Demo
 
 <https://exuanbo.github.io/file-icons-js/>
 
-### Quick Start
+It's also a starter template for using in browser
 
-```html
-<head>
-  <link href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css" rel="stylesheet">
-</head>
+## Description
 
-<body>
-  <i id="icon"></i>
+- CSS  with self-hosting fonts and web fonts
+- JavaScript for getting classes by file name with extension, specific directory name and programming language name
 
-  <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
-  <script>
-    const icons = require('file-icons-js')
-    const classArray = icons.getClass('index.js', { array: true })
-    for (const i in classArray) {
-      document.getElementById('icon').classList.add(classArray[i])
-    }
-  </script>
-</body>
+## What's included
+
+```shell
+dist
+├── css
+│   ├── file-icons-cdn.css
+│   ├── file-icons-cdn.min.css
+│   ├── file-icons-cdn.min.css.map
+│   ├── file-icons.css
+│   ├── file-icons.min.css
+│   └── file-icons.min.css.map
+├── fonts
+│   ├── devopicons.woff2
+│   ├── file-icons.woff2
+│   ├── fontawesome.woff2
+│   ├── mfixx.woff2
+│   └── octicons.woff2
+└── js
+    ├── file-icons.es.min.js
+    ├── file-icons.es.min.js.map
+    ├── file-icons.js
+    ├── file-icons.min.js
+    ├── file-icons.min.js.map
+    └── file-icons.mjs
+
+3 directories, 17 files
 ```
 
 ## Installation
@@ -72,26 +108,34 @@ Icon reference
 
 ![css gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css)
 
-Add a link tag to head, or `@import`
+```shell
+dist/css
+├── file-icons-cdn.css
+├── file-icons-cdn.min.css
+├── file-icons-cdn.min.css.map
+├── file-icons.css
+├── file-icons.min.css
+└── file-icons.min.css.map
 
-#### Local
-
-`dist/file-icons.min.css`
-
-```html
-<head>
-  <link href="node_modules/@exuanbo/file-icons-js/dist/file-icons.min.css" rel="stylesheet">
-</head>
+0 directories, 6 files
 ```
 
-#### Using CDN and Web Fonts
+Add a link tag to head, or `@import`
 
-`dist/file-icons-cdn.min.css`
+#### 1. Local
+
+`dist/css/file-icons.min.css`
 
 ```html
-<head>
-  <link href="node_modules/@exuanbo/file-icons-js/dist/file-icons-cdn.min.css" rel="stylesheet">
-</head>
+<link href="node_modules/@exuanbo/file-icons-js/dist/css/file-icons.min.css" rel="stylesheet">
+```
+
+#### 2. Use CDN and Web Fonts
+
+`dist/css/file-icons-cdn.min.css`
+
+```html
+<link href="node_modules/@exuanbo/file-icons-js/dist/css/file-icons-cdn.min.css" rel="stylesheet">
 ```
 
 in which `url` is remote,
@@ -108,32 +152,71 @@ in which `url` is remote,
 Or entirely using CDN,
 
 ```html
-<head>
-  <link href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.css" rel="stylesheet">
-</head>
+<link href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/css/file-icons.min.css" rel="stylesheet">
 ```
 
 ### JavaScript
 
 ![js gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js)
 
-Require in Node.js,
+```shell
+dist/js
+├── file-icons.es.min.js
+├── file-icons.es.min.js.map
+├── file-icons.js
+├── file-icons.min.js
+├── file-icons.min.js.map
+└── file-icons.mjs
+
+0 directories, 6 files
+```
+
+```json
+// package.json
+{
+  "main": "./dist/js/file-icons.js",
+  "exports": {
+    "import": "./dist/js/file-icons.mjs",
+    "require": "./dist/js/file-icons.js"
+  }
+}
+```
+
+```javascript
+// dist/js/file-icons.mjs
+var main = new FileIcons();
+export default main;
+```
+
+#### Node.js
+
+##### 1. CommonJS
 
 ```javascript
 const icons = require('@exuanbo/file-icons-js')
 ```
 
-Or in browser,
+##### 2. ECMAScript Module
+
+```javascript
+import icons from '@exuanbo/file-icons-js'
+```
+
+#### Browser
+
+##### 1. Browserified CommonJS
+
+`dist/js/file-icons.min.js`
 
 ```html
 <!-- Local -->
-<script src="node_modules/@exuanbo/file-icons-js/dist/file-icons.min.js"></script>
+<script src="node_modules/@exuanbo/file-icons-js/dist/js/file-icons.min.js"></script>
 
-<!-- Using CDN -->
-<script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/file-icons.min.js"></script>
+<!-- Use CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.min.js"></script>
 ```
 
-And then create an instance,
+Then create an instance,
 
 ```html
 <script>
@@ -141,7 +224,23 @@ And then create an instance,
 </script>
 ```
 
-### API
+##### 2. ES6 Module
+
+`dist/js/file-icons.es.min.js`
+
+```html
+<!-- Local -->
+<script type="module">
+  import icons from 'node_modules/@exuanbo/file-icons-js/dist/js/file-icons.es.min.js'
+</script>
+
+<!-- Use CDN -->
+<script type="module">
+  import icons from 'https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.es.min.js'
+</script>
+```
+
+### API Reference
 
 `getClass(name, options?)`
 
@@ -173,7 +272,7 @@ Default: `false`
 
 Return an array of string `['icon', 'js-icon', 'medium-yellow']`
 
-### Example
+#### Example
 
 ```javascript
 icons.getClass('index.js')
@@ -203,7 +302,7 @@ icons.getClass('node_modules', {
 - [x] CDN support
 - [x] demo site
 - [x] add a webfont version of css
-- [ ] ES6 module
+- [x] ES6 module
 
 ## License
 
