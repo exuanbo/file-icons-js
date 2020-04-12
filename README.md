@@ -18,8 +18,9 @@
 - [Installation](#installation)
 - [Usage](#usage)
   - [CSS](#css)
-    - [1. Local](#1-local)
-    - [2. Use CDN and Web Fonts](#2-use-cdn-and-web-fonts)
+    - [Locally](#locally)
+    - [With CDN and Web Fonts](#with-cdn-and-web-fonts)
+    - [Customize](#customize)
   - [JavaScript](#javascript)
     - [Node.js](#nodejs)
       - [1. CommonJS](#1-commonjs)
@@ -39,13 +40,13 @@
 
 ## Demo
 
-<https://exuanbo.github.io/file-icons-js/>
+<https://exuanbo.github.io/file-icons-js/> and [CodePen](https://codepen.io/exuanbo/pen/jObPEGO)
 
-It's also a starter template for using in browser
+They're also good starter templates for using in browser
 
 ## Description
 
-- CSS  with self-hosting fonts and web fonts
+- CSS  with self-hosted fonts and web fonts
 - JavaScript for getting classes by file name with extension, specific directory name and programming language name
 
 ## What's included
@@ -122,7 +123,7 @@ dist/css
 
 Add a link tag to head, or `@import`
 
-#### 1. Local
+#### Locally
 
 `dist/css/file-icons.min.css`
 
@@ -130,7 +131,7 @@ Add a link tag to head, or `@import`
 <link href="node_modules/@exuanbo/file-icons-js/dist/css/file-icons.min.css" rel="stylesheet">
 ```
 
-#### 2. Use CDN and Web Fonts
+#### With CDN and Web Fonts
 
 `dist/css/file-icons-cdn.min.css`
 
@@ -153,6 +154,23 @@ Or entirely using CDN,
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/css/file-icons.min.css" rel="stylesheet">
+```
+
+#### Customize
+
+By default,
+
+```css
+.icon:before {
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  width: 16px;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+}
 ```
 
 ### JavaScript
@@ -209,10 +227,10 @@ import icons from '@exuanbo/file-icons-js'
 `dist/js/file-icons.min.js`
 
 ```html
-<!-- Local -->
+<!-- Locally -->
 <script src="node_modules/@exuanbo/file-icons-js/dist/js/file-icons.min.js"></script>
 
-<!-- Use CDN -->
+<!-- With CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.min.js"></script>
 ```
 
@@ -229,12 +247,12 @@ Then create an instance,
 `dist/js/file-icons.es.min.js`
 
 ```html
-<!-- Local -->
+<!-- Locally -->
 <script type="module">
   import icons from 'node_modules/@exuanbo/file-icons-js/dist/js/file-icons.es.min.js'
 </script>
 
-<!-- Use CDN -->
+<!-- With CDN -->
 <script type="module">
   import icons from 'https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.es.min.js'
 </script>
