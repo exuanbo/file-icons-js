@@ -1,5 +1,13 @@
+.markdown*
 .vscode/
+bin/
+config.cson
 coverage/
 fonts/
+gulpfile.js
+lib/
 node_modules/
+styles/
+test/index.html
 *.tgz
+*ignore
