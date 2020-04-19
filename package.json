@@ -7,6 +7,9 @@
     "import": "./dist/js/file-icons.mjs",
     "require": "./dist/js/file-icons.js"
   },
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "build": "./bin/compile && gulp",
     "format": "eslint \"**/*.js\" --fix && prettier \"**/*.{js,json}\" --write",
