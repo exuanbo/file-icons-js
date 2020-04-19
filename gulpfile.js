@@ -72,11 +72,7 @@ function css() {
     .pipe(dest('dist/css'))
 }
 
-function fonts() {
-  return src(['fonts/*']).pipe(dest('dist/fonts'))
-}
-
-function webfonts() {
+function cssCDN() {
   return src(['dist/css/file-icons.css'])
     .pipe(
       replace(
@@ -93,7 +89,11 @@ function webfonts() {
     .pipe(dest('dist/css'))
 }
 
+function fonts() {
+  return src(['fonts/*']).pipe(dest('dist/fonts'))
+}
+
 exports.default = series(
   clean,
-  parallel(cjs, es, browser, series(css, fonts, webfonts))
+  parallel(cjs, es, browser, series(css, cssCDN), fonts)
 )
