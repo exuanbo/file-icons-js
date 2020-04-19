@@ -2,11 +2,11 @@
 
 > File-specific icons for front-end project, extracted from [file-icons/atom](https://github.com/file-icons/atom)
 
-[![Travis CI](https://flat.badgen.net/travis/exuanbo/file-icons-js)](https://travis-ci.com/github/exuanbo/file-icons-js)
-[![NPM Version](https://flat.badgen.net/npm/v/@exuanbo/file-icons-js)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
-[![NPM Downloads](https://flat.badgen.net/npm/dw/@exuanbo/file-icons-js)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
-[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/@exuanbo/file-icons-js/badge)](https://www.jsdelivr.com/package/npm/@exuanbo/file-icons-js)
-[![License](https://flat.badgen.net/github/license/exuanbo/file-icons-js)](https://github.com/exuanbo/file-icons-js/blob/master/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/@exuanbo/file-icons-js.svg?style=flat-square)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
+[![Travis CI](https://img.shields.io/travis/com/exuanbo/file-icons-js.svg?style=flat-square)](https://travis-ci.com/github/exuanbo/file-icons-js)
+[![NPM Downloads](https://img.shields.io/npm/dw/@exuanbo/file-icons-js.svg?style=flat-square)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
+[![jsDelivr](https://img.shields.io/jsdelivr/npm/hm/@exuanbo/file-icons-js.svg?style=flat-square)](https://www.jsdelivr.com/package/npm/@exuanbo/file-icons-js)
+[![License](https://img.shields.io/github/license/exuanbo/file-icons-js.svg?style=flat-square)](https://github.com/exuanbo/file-icons-js/blob/master/LICENSE)
 
 ![Icons preview](https://cdn.jsdelivr.net/gh/file-icons/atom@latest/preview.png)
 
