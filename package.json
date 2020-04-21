@@ -12,9 +12,10 @@
   },
   "scripts": {
     "build": "./bin/compile && gulp",
+    "docs": "markdownlint \"./README.md\" && markdown-link-check -c \"./.markdown-link-check.json\" \"./README.md\"",
     "format": "eslint \"**/*.js\" --fix && prettier \"**/*.{js,json}\" --write",
-    "format:check": "eslint \"**/*.js\" && prettier --check \"**/*.{js,json}\" && markdownlint \"./README.md\" && markdown-link-check -c \"./.markdown-link-check.json\" \"./README.md\"",
-    "test": "npm run build && npm run format:check && rm -rf \"./coverage\" && jest"
+    "format:check": "eslint \"**/*.js\" && prettier --check \"**/*.{js,json}\"",
+    "test": "npm run format:check && npm run build && rm -rf \"./coverage\" && jest"
   },
   "repository": {
     "type": "git",
