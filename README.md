@@ -1,4 +1,4 @@
-# file-icons-js
+# @exuanbo/file-icons-js
 
 > File-specific icons for front-end project, extracted from [file-icons/atom](https://github.com/file-icons/atom)
 
@@ -18,7 +18,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
   - [CSS](#css)
-    - [Locally](#locally)
+    - [Local](#local)
     - [With CDN and Web Fonts](#with-cdn-and-web-fonts)
     - [Customize](#customize)
   - [JavaScript](#javascript)
@@ -26,8 +26,8 @@
       - [1. CommonJS](#1-commonjs)
       - [2. ECMAScript Module](#2-ecmascript-module)
     - [Browser](#browser)
-      - [1. Browserified CommonJS](#1-browserified-commonjs)
-      - [2. ES6 Module](#2-es6-module)
+      - [1. Browserified Module](#1-browserified-module)
+      - [2. ES Module](#2-es-module)
   - [API Reference](#api-reference)
     - [name](#name)
     - [options](#options)
@@ -123,7 +123,7 @@ dist/css
 
 Add a link tag to head, or `@import`
 
-#### Locally
+#### Local
 
 `dist/css/file-icons.min.css`
 
@@ -222,7 +222,7 @@ import icons from '@exuanbo/file-icons-js'
 
 #### Browser
 
-##### 1. Browserified CommonJS
+##### 1. Browserified Module
 
 `dist/js/file-icons.min.js`
 
@@ -242,7 +242,7 @@ Then create an instance,
 </script>
 ```
 
-##### 2. ES6 Module
+##### 2. ES Module
 
 `dist/js/file-icons.es.min.js`
 
