@@ -42,7 +42,7 @@
 
 <https://exuanbo.github.io/file-icons-js/> and [CodePen](https://codepen.io/exuanbo/pen/jObPEGO)
 
-They're also good starter templates for using in browser
+They are also good starter templates for using in browser
 
 ## Description
 
