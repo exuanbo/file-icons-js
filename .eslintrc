@@ -8,8 +8,7 @@
     "ecmaVersion": 2018
   },
   "extends": [
-    "eslint:recommended",
-    "prettier-standard/prettier-file"
+    "prettier-standard"
   ],
   "globals": {
     "Atomics": "readonly",
