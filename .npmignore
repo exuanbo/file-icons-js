@@ -7,6 +7,7 @@ fonts/
 gulpfile.js
 lib/
 node_modules/
+renovate.json
 styles/
 test/index.html
 *.tgz
