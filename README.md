@@ -23,11 +23,11 @@
     - [Customize](#customize)
   - [JavaScript](#javascript)
     - [Node.js](#nodejs)
-      - [1. CommonJS](#1-commonjs)
-      - [2. ECMAScript Module](#2-ecmascript-module)
+      - [1. CJS Module](#1-cjs-module)
+      - [2. ES Module](#2-es-module)
     - [Browser](#browser)
       - [1. Browserified Module](#1-browserified-module)
-      - [2. ES Module](#2-es-module)
+      - [2. ES Module](#2-es-module-1)
   - [API Reference](#api-reference)
     - [name](#name)
     - [options](#options)
@@ -208,13 +208,13 @@ export default main;
 
 #### Node.js
 
-##### 1. CommonJS
+##### 1. CJS Module
 
 ```javascript
 const icons = require('@exuanbo/file-icons-js')
 ```
 
-##### 2. ECMAScript Module
+##### 2. ES Module
 
 ```javascript
 import icons from '@exuanbo/file-icons-js'
