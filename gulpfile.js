@@ -5,7 +5,6 @@ const buffer = require('vinyl-buffer')
 const rollupStream = require('@rollup/stream')
 const commonjs = require('@rollup/plugin-commonjs')
 const browserify = require('browserify')
-const sourcemaps = require('gulp-sourcemaps')
 const uglify = require('gulp-uglify-es').default
 const path = require('path')
 const replace = require('gulp-replace')
@@ -38,10 +37,8 @@ function es() {
     .pipe(source('file-icons.esm.js'))
     .pipe(dest('dist/js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
-    .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/js'))
 }
 
@@ -53,10 +50,8 @@ function browser() {
     .bundle()
     .pipe(source('file-icons.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
-    .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/js'))
 }
 
@@ -65,10 +60,8 @@ function css() {
     .pipe(less({ paths: [path.join(__dirname, 'styles')] }))
     .pipe(rename('file-icons.css'))
     .pipe(dest('dist/css'))
-    .pipe(sourcemaps.init())
     .pipe(cleanCSS())
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/css'))
 }
 
@@ -82,10 +75,8 @@ function cssCDN() {
     )
     .pipe(rename('file-icons-cdn.css'))
     .pipe(dest('dist/css'))
-    .pipe(sourcemaps.init())
     .pipe(cleanCSS())
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(sourcemaps.write('.'))
     .pipe(dest('dist/css'))
 }
 

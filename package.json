@@ -62,7 +62,6 @@
     "gulp-less": "4.0.1",
     "gulp-rename": "2.0.0",
     "gulp-replace": "1.0.0",
-    "gulp-sourcemaps": "2.6.5",
     "gulp-uglify-es": "2.0.0",
     "jest": "25.5.0",
     "markdown-link-check": "3.8.1",
