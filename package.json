@@ -4,6 +4,7 @@
   "description": "File-specific icons for front-end project, extracted from file-icons/atom",
   "main": "./dist/js/file-icons.js",
   "module": "./dist/js/file-icons.esm.js",
+  "browser": "./dist/js/file-icons.min.js",
   "directories": {
     "test": "test"
   },
