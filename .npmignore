@@ -1,4 +1,5 @@
-.markdown*
+.eslintignore
+.markdownlint.json
 .vscode/
 bin/
 config.cson
@@ -11,4 +12,3 @@ renovate.json
 styles/
 test/index.html
 *.tgz
-*ignore

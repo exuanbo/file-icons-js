@@ -40,9 +40,9 @@
 
 ## Demo
 
-<https://exuanbo.github.io/file-icons-js/> and [CodePen](https://codepen.io/exuanbo/pen/jObPEGO)
+<https://exuanbo.github.io/file-icons-js/>
 
-They are also good starter templates for using in browser
+It's also a starter template for using in browser
 
 ## Description
 

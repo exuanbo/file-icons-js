@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "./bin/compile && gulp",
-    "docs": "markdownlint \"./README.md\" && markdown-link-check -c \"./.markdown-link-check.json\" \"./README.md\"",
+    "docs": "markdownlint \"./README.md\" && markdown-link-check \"./README.md\"",
     "format": "eslint \"**/*.js\" --fix",
     "format:check": "eslint \"**/*.js\"",
     "test": "npm run format:check && npm run build && rm -rf \"./coverage\" && jest"
