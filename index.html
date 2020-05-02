@@ -151,28 +151,30 @@
     <script nomodule>
       const icons = require('file-icons-js')
       const input = document.querySelector('input')
-      document.getElementById('file-icon').classList.value = icons.getClass(
-        input.value
-      )
+      const icon = document.getElementById('file-icon')
+      ;(async () => {
+        const iconClass = await icons.getClass(input.value)
+        icon.classList.value = iconClass
+      })()
       input.addEventListener('input', updateValue)
-      function updateValue(e) {
-        document.getElementById('file-icon').classList.value = icons.getClass(
-          e.target.value
-        )
+      async function updateValue(e) {
+        const iconClass = await icons.getClass(e.target.value)
+        icon.classList.value = iconClass
       }
     </script>
 
     <script type="module">
-      import icons from 'https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.es.min.js'
+      import icons from 'https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.esm.min.js'
       const input = document.querySelector('input')
-      document.getElementById('file-icon').classList.value = icons.getClass(
-        input.value
-      )
+      const icon = document.getElementById('file-icon')
+      ;(async () => {
+        const iconClass = await icons.getClass(input.value)
+        icon.classList.value = iconClass
+      })()
       input.addEventListener('input', updateValue)
-      function updateValue(e) {
-        document.getElementById('file-icon').classList.value = icons.getClass(
-          e.target.value
-        )
+      async function updateValue(e) {
+        const iconClass = await icons.getClass(e.target.value)
+        icon.classList.value = iconClass
       }
     </script>
   </body>
