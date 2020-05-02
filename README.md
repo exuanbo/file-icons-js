@@ -56,10 +56,8 @@ dist
 ├── css
 │   ├── file-icons-cdn.css
 │   ├── file-icons-cdn.min.css
-│   ├── file-icons-cdn.min.css.map
 │   ├── file-icons.css
-│   ├── file-icons.min.css
-│   └── file-icons.min.css.map
+│   └── file-icons.min.css
 ├── fonts
 │   ├── devopicons.woff2
 │   ├── file-icons.woff2
@@ -67,14 +65,12 @@ dist
 │   ├── mfixx.woff2
 │   └── octicons.woff2
 └── js
-    ├── file-icons.es.min.js
-    ├── file-icons.es.min.js.map
+    ├── file-icons.esm.js
+    ├── file-icons.esm.min.js
     ├── file-icons.js
-    ├── file-icons.min.js
-    ├── file-icons.min.js.map
-    └── file-icons.mjs
+    └── file-icons.min.js
 
-3 directories, 17 files
+3 directories, 13 files
 ```
 
 ## Installation
@@ -113,12 +109,8 @@ Icon reference
 dist/css
 ├── file-icons-cdn.css
 ├── file-icons-cdn.min.css
-├── file-icons-cdn.min.css.map
 ├── file-icons.css
-├── file-icons.min.css
-└── file-icons.min.css.map
-
-0 directories, 6 files
+└── file-icons.min.css
 ```
 
 Add a link tag to head, or `@import`
@@ -175,33 +167,27 @@ By default,
 
 ### JavaScript
 
-![js gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.es.min.js)
+![js gzip size](https://flat.badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.esm.min.js)
 
 ```shell
 dist/js
-├── file-icons.es.min.js
-├── file-icons.es.min.js.map
+├── file-icons.esm.js
+├── file-icons.esm.min.js
 ├── file-icons.js
-├── file-icons.min.js
-├── file-icons.min.js.map
-└── file-icons.mjs
-
-0 directories, 6 files
+└── file-icons.min.js
 ```
 
 ```json
 // package.json
 {
   "main": "./dist/js/file-icons.js",
-  "exports": {
-    "import": "./dist/js/file-icons.mjs",
-    "require": "./dist/js/file-icons.js"
-  }
+  "module": "./dist/js/file-icons.esm.js",
+  "browser": "./dist/js/file-icons.min.js"
 }
 ```
 
 ```javascript
-// dist/js/file-icons.mjs
+// dist/js/file-icons.esm.js
 var main = new FileIcons();
 export default main;
 ```
@@ -244,17 +230,17 @@ Then create an instance,
 
 ##### 2. ES Module
 
-`dist/js/file-icons.es.min.js`
+`dist/js/file-icons.esm.min.js`
 
 ```html
 <!-- Locally -->
 <script type="module">
-  import icons from 'node_modules/@exuanbo/file-icons-js/dist/js/file-icons.es.min.js'
+  import icons from 'node_modules/@exuanbo/file-icons-js/dist/js/file-icons.esm.min.js'
 </script>
 
 <!-- With CDN -->
 <script type="module">
-  import icons from 'https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.es.min.js'
+  import icons from 'https://cdn.jsdelivr.net/npm/@exuanbo/file-icons-js@latest/dist/js/file-icons.esm.min.js'
 </script>
 ```
 
