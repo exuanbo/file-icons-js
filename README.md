@@ -248,7 +248,9 @@ Then create an instance,
 
 `getClass(name, options?)`
 
-Returns `String|String[]`
+Return `Promise<string|string[]>`
+
+**Note**: this method is Promise based since version 3, and compatible with async/await
 
 #### name
 
@@ -279,22 +281,22 @@ Return an array of string `['icon', 'js-icon', 'medium-yellow']`
 #### Example
 
 ```javascript
-icons.getClass('index.js')
-// -> 'icon js-icon medium-yellow'
+icons.getClass('package.json')
+// -> Promise {<resolved>: "icon npm-icon medium-red"}
 
 icons.getClass('Javascript')
-// -> 'icon js-icon medium-yellow'
+// -> Promise {<resolved>: "icon js-icon medium-yellow"}
 
 icons.getClass('node_modules', {
   array: true
 })
-// -> ['icon', 'node-icon', 'medium-green']
+// -> Promise {<resolved>: ['icon', 'node-icon', 'medium-green']}
 
 icons.getClass('node_modules', {
   color: false,
   array: true
 })
-// -> ['icon', 'node-icon']
+// -> Promise {<resolved>: ['icon', 'node-icon']}
 ```
 
 ## Acknowledgement
@@ -305,8 +307,8 @@ icons.getClass('node_modules', {
 
 - [x] CDN support
 - [x] demo site
-- [x] add a webfont version of css
-- [x] ES6 module
+- [x] webfont version of css
+- [x] ES module
 
 ## License
 
