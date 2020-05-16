@@ -3,7 +3,7 @@
 > File-specific icons for front-end project, extracted from [file-icons/atom](https://github.com/file-icons/atom)
 
 [![NPM Version](https://img.shields.io/npm/v/@exuanbo/file-icons-js.svg?style=flat-square)](https://www.npmjs.com/package/@exuanbo/file-icons-js)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-yellow.svg?style=flat-square)](https://standardjs.com)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
 [![Travis CI](https://img.shields.io/travis/com/exuanbo/file-icons-js/master.svg?style=flat-square)](https://travis-ci.com/github/exuanbo/file-icons-js)
 [![David](https://img.shields.io/david/exuanbo/file-icons-js.svg?style=flat-square)](https://david-dm.org/exuanbo/file-icons-js)
 [![License](https://img.shields.io/github/license/exuanbo/file-icons-js.svg?style=flat-square)](https://github.com/exuanbo/file-icons-js/blob/master/LICENSE)
