@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/exuanbo/file-icons-js#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "13.0.1",
+    "@rollup/plugin-commonjs": "14.0.0",
     "@rollup/stream": "1.0.0",
     "browserify": "16.5.1",
     "coffee-script": "1.12.7",
