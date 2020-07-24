@@ -25,15 +25,13 @@ class Option {
 }
 
 function cjs() {
-  const options = new Option('cjs')
-  return rollupStream(options)
+  return rollupStream(new Option('cjs'))
     .pipe(source('file-icons.js'))
     .pipe(dest('dist/js'))
 }
 
 function es() {
-  const options = new Option('es')
-  return rollupStream(options)
+  return rollupStream(new Option('es'))
     .pipe(source('file-icons.esm.js'))
     .pipe(dest('dist/js'))
     .pipe(buffer())
