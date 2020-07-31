@@ -48,7 +48,7 @@
     "browserify": "16.5.1",
     "coffee-script": "1.12.7",
     "del": "5.1.0",
-    "eslint": "7.5.0",
+    "eslint": "7.6.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-config-prettier-standard": "3.0.1",
     "eslint-config-standard": "14.1.1",
