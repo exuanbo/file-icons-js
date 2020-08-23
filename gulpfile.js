@@ -19,7 +19,10 @@ function clean() {
 class Option {
   constructor(format) {
     this.input = 'lib/main.js'
-    this.output = { format: format }
+    this.output = {
+      format: format,
+      exports: 'auto'
+    }
     this.plugins = [commonjs()]
   }
 }
