@@ -9,11 +9,12 @@
     "test": "test"
   },
   "scripts": {
+    "test": "npm run format:check && rimraf coverage && jest",
+    "pretest": "npm run build",
     "build": "./bin/compile && gulp",
-    "docs": "markdownlint \"./README.md\" && markdown-link-check \"./README.md\"",
-    "format": "eslint \"**/*.js\" --fix",
-    "format:check": "eslint \"**/*.js\"",
-    "test": "npm run format:check && npm run build && rm -rf \"./coverage\" && jest"
+    "docs": "markdownlint README.md && markdown-link-check README.md",
+    "format": "eslint --fix '**/*.js'",
+    "format:check": "eslint '**/*.js'"
   },
   "repository": {
     "type": "git",
