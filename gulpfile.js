@@ -1,16 +1,16 @@
-const { src, dest, series, parallel } = require('gulp')
+const path = require('path')
 const del = require('del')
+const { src, dest, series, parallel } = require('gulp')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
-const rollupStream = require('@rollup/stream')
-const commonjs = require('@rollup/plugin-commonjs')
-const browserify = require('browserify')
+const rename = require('gulp-rename')
 const uglify = require('gulp-uglify-es').default
-const path = require('path')
 const replace = require('gulp-replace')
 const less = require('gulp-less')
 const cleanCSS = require('gulp-clean-css')
-const rename = require('gulp-rename')
+const rollupStream = require('@rollup/stream')
+const commonjs = require('@rollup/plugin-commonjs')
+const browserify = require('browserify')
 
 function clean() {
   return del(['dist'])
