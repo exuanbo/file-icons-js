@@ -71,7 +71,7 @@
     "prettier": "2.1.2",
     "prettier-config-standard": "1.0.1",
     "rimraf": "3.0.2",
-    "rollup": "2.27.0",
+    "rollup": "2.27.1",
     "vinyl-buffer": "1.0.1",
     "vinyl-source-stream": "2.0.0"
   },
