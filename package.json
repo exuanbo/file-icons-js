@@ -48,7 +48,6 @@
     "@rollup/stream": "1.1.0",
     "browserify": "16.5.2",
     "coffee-script": "1.12.7",
-    "del": "5.1.0",
     "eslint": "7.9.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-config-prettier-standard": "3.0.1",
