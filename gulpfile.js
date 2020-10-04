@@ -1,5 +1,5 @@
+const { exec } = require('child_process')
 const path = require('path')
-const del = require('del')
 const { src, dest, series, parallel } = require('gulp')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
@@ -13,7 +13,7 @@ const commonjs = require('@rollup/plugin-commonjs')
 const browserify = require('browserify')
 
 function clean() {
-  return del(['dist'])
+  return exec('rm -rf dist')
 }
 
 class Option {
