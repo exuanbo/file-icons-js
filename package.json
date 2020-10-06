@@ -64,7 +64,7 @@
     "gulp-rename": "2.0.0",
     "gulp-replace": "1.0.0",
     "gulp-uglify-es": "2.0.0",
-    "jest": "26.5.0",
+    "jest": "26.5.2",
     "markdown-link-check": "3.8.3",
     "markdownlint-cli": "0.24.0",
     "prettier": "2.1.2",
