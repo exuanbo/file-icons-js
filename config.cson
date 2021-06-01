@@ -4800,7 +4800,7 @@ fileIcons:
 		colour: "medium-green"
 
 	PDF:
-		icon: "icon-file-pdf"
+		icon: "pdf"
 		noSuffix: true
 		match: ".pdf"
 		colour: "medium-red"
@@ -6259,7 +6259,7 @@ fileIcons:
 		]
 
 	Text:
-		icon: "icon-file-text"
+		icon: "text"
 		noSuffix: true
 		match: [
 			[/\.te?xt$/i, "medium-blue", signature: /^\xEF\xBB\xBF|^\xFF\xFE/]
