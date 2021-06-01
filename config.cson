@@ -1215,7 +1215,7 @@ fileIcons:
 		colour: "medium-green"
 
 	"Circuit Board":
-		icon: "icon-circuit-board"
+		icon: "microchip"
 		noSuffix: true
 		generic: true
 		match: [
@@ -1847,7 +1847,7 @@ fileIcons:
 		]
 
 	"D★Mark":
-		icon: "icon-star"
+		icon: "star"
 		match: ".dmark"
 		colour: "dark-red"
 		alias: /^d[_\W]?mark$/i
@@ -6311,7 +6311,7 @@ fileIcons:
 		]
 
 	Theme:
-		icon: "icon-paintcan"
+		icon: "brush"
 		noSuffix: true
 		match: ".theme"
 		colour: "medium-purple"
