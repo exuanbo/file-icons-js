@@ -1215,8 +1215,7 @@ fileIcons:
 		colour: "medium-green"
 
 	"Circuit Board":
-		icon: "icon-circuit-board"
-		noSuffix: true
+		icon: "microchip"
 		generic: true
 		match: [
 			[".brd", "dark-green"]
@@ -1847,11 +1846,10 @@ fileIcons:
 		]
 
 	"D★Mark":
-		icon: "icon-star"
+		icon: "star"
 		match: ".dmark"
 		colour: "dark-red"
 		alias: /^d[_\W]?mark$/i
-		noSuffix: true
 
 	Dependabot:
 		icon: "dependabot"
@@ -4800,8 +4798,7 @@ fileIcons:
 		colour: "medium-green"
 
 	PDF:
-		icon: "icon-file-pdf"
-		noSuffix: true
+		icon: "pdf"
 		match: ".pdf"
 		colour: "medium-red"
 		signature: /^%PDF/
@@ -6259,8 +6256,7 @@ fileIcons:
 		]
 
 	Text:
-		icon: "icon-file-text"
-		noSuffix: true
+		icon: "text"
 		match: [
 			[/\.te?xt$/i, "medium-blue", signature: /^\xEF\xBB\xBF|^\xFF\xFE/]
 			[/\.log$|^Terminal[-_\s]Saved[-_\s]Output$/i, "medium-maroon"]
@@ -6311,8 +6307,7 @@ fileIcons:
 		]
 
 	Theme:
-		icon: "icon-paintcan"
-		noSuffix: true
+		icon: "brush"
 		match: ".theme"
 		colour: "medium-purple"
 
