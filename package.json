@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "npm run format:check && rimraf coverage && jest",
+    "prepare": "npm run build",
     "pretest": "npm run build",
     "build": "./bin/compile && gulp",
     "docs": "markdownlint README.md && markdown-link-check README.md",
